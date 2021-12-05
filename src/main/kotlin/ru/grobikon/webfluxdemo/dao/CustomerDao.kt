@@ -32,4 +32,14 @@ class CustomerDao {
             .doOnNext{ println("processing count in stream flow: $it") }
             .map{ Customer(it, "customer $it")}
     }
+
+    /**
+     * Создаем 50 клиентов
+     * И возвращаем их в списке через реактивность
+     */
+    fun getCustomerList(): Flux<Customer> {
+        return Flux.range(1, 50)
+            .doOnNext{ println("processing count in stream flow: $it") }
+            .map{ Customer(it, "customer $it")}
+    }
 }
