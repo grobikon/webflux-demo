@@ -24,6 +24,8 @@ class RouterConfig(
         return RouterFunctions.route()
             .GET("/router/customers", customerHandler::loadCustomers)
             .GET("/router/customers/stream", customerStreamHandler::loadCustomers)
+            .GET("/router/customer/{input}", customerHandler::findCustomer)
+            .POST("/router/customer/save", customerHandler::saveCustomer)
             .build()
     }
 }

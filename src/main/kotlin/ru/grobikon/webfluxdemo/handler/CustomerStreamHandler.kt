@@ -8,6 +8,7 @@ import reactor.core.publisher.Mono
 import ru.grobikon.webfluxdemo.dao.CustomerDao
 import ru.grobikon.webfluxdemo.dto.Customer
 
+
 @Service
 class CustomerStreamHandler(
     val customerDao: CustomerDao
