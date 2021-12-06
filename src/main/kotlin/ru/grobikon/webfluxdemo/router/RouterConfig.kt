@@ -16,16 +16,16 @@ class RouterConfig(
 
     /**
      * Функция маршрутизатора,
-     * возвращаем список клиентов
+     *
      * Составляем карту обработчика
      */
     @Bean
     fun routerFunction(): RouterFunction<ServerResponse> {
         return RouterFunctions.route()
-            .GET("/router/customers", customerHandler::loadCustomers)
-            .GET("/router/customers/stream", customerStreamHandler::loadCustomers)
-            .GET("/router/customer/{input}", customerHandler::findCustomer)
-            .POST("/router/customer/save", customerHandler::saveCustomer)
+            .GET("/router/customers", customerHandler::loadCustomers)                   //возвращаем список клиентов
+            .GET("/router/customers/stream", customerStreamHandler::loadCustomers)      //возвращаем список клиентов stream
+            .GET("/router/customer/{input}", customerHandler::findCustomer)             //поиск клиента
+            .POST("/router/customer/save", customerHandler::saveCustomer)               //сохранение нового клиента
             .build()
     }
 }
